@@ -41,3 +41,6 @@
 ### 3. 召回负样本
 + [负样本为王：评Facebook的向量化召回算法](https://zhuanlan.zhihu.com/p/165064102)
 + []
+
+### 4. 采样
++ [YouTube采样修正的双塔模型论文精读](https://mp.weixin.qq.com/s/us4qGD3LDgLmPy2m-qq-iw)
