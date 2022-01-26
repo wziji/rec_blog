@@ -28,19 +28,25 @@
 
 ## 四. 基础知识篇
 
-### 1. 蒸馏系列
+### 1. 先验知识
++ [先入为主：将先验知识注入推荐模型](https://zhuanlan.zhihu.com/p/442845759)
+
+### 2. 蒸馏系列
 + [知识蒸馏在推荐系统的应用](https://zhuanlan.zhihu.com/p/143155437)
 + [深度学习中的知识蒸馏技术（上）](https://mp.weixin.qq.com/s/E7-MF18Y-UeKx694kGFHzA)
 + [深度学习中的知识蒸馏技术(下)-知识蒸馏与推荐系统](https://mp.weixin.qq.com/s/Noac4YLIimr1HM2fln2bjg)
 
-### 2. 对比学习
+### 3. 对比学习
 + [少数派报告：谈推荐场景下的对比学习](https://zhuanlan.zhihu.com/p/435903339)
 + [对比学习（Contrastive Learning）:研究进展精要](https://zhuanlan.zhihu.com/p/367290573)
 + [对比学习视角:重新审视推荐系统的召回粗排模型](https://zhuanlan.zhihu.com/p/424198603)
 
-### 3. 召回负样本
+### 4. 召回负样本
 + [负样本为王：评Facebook的向量化召回算法](https://zhuanlan.zhihu.com/p/165064102)
 + []
 
-### 4. 采样
+### 5. 采样策略
 + [YouTube采样修正的双塔模型论文精读](https://mp.weixin.qq.com/s/us4qGD3LDgLmPy2m-qq-iw)
+
+### 6. 冷启动
++ [初来乍到：帮助新用户冷启的算法技巧](https://zhuanlan.zhihu.com/p/458843906)
