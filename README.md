@@ -12,7 +12,8 @@
 + 知乎张俊林 [推荐系统召回四模型之二：沉重的FFM模型](https://zhuanlan.zhihu.com/p/59528983)
 + 美团技术团队 [深入FFM原理与实践](https://tech.meituan.com/2016/03/03/deep-understanding-of-ffm-principles-and-practices.html)
 
-#### 1.3 
+#### 1.3 双塔模型
+
 
 ### 2. 实践
 
@@ -41,7 +42,7 @@
 + 知乎张俊林 [对比学习（Contrastive Learning）:研究进展精要](https://zhuanlan.zhihu.com/p/367290573)
 + 知乎张俊林 [对比学习视角:重新审视推荐系统的召回粗排模型](https://zhuanlan.zhihu.com/p/424198603)
 
-### 4. 召回负样本
+### 4. 召回强负样本
 + 知乎石塔西 [负样本为王：评Facebook的向量化召回算法](https://zhuanlan.zhihu.com/p/165064102)
 + 公众号蘑菇先生 [KDD'21 | 揭秘Facebook升级版语义搜索技术](https://mp.weixin.qq.com/s/mkC8lSbBXWMUIXUg3KrAjQ)
 
