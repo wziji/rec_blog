@@ -29,6 +29,24 @@
 
 ## 四. 基础知识篇
 
+### 0. 特征工程
++ 知乎石塔西 [刀功：谈推荐系统特征工程中的几个高级技巧](https://zhuanlan.zhihu.com/p/448680238)
+```
+mermaid
+graph LR
+    start[开始] --> input[输入A,B,C]
+    input --> conditionA{A是否大于B}
+    conditionA -- YES --> conditionC{A是否大于C}
+    conditionA -- NO --> conditionB{B是否大于C}
+    conditionC -- YES --> printA[输出A]
+    conditionC -- NO --> printC[输出C]
+    conditionB -- YES --> printB[输出B]
+    conditionB -- NO --> printC[输出C]
+    printA --> stop[结束]
+    printC --> stop
+    printB --> stop
+
+```
 ### 1. 先验知识
 + 知乎石塔西 [先入为主：将先验知识注入推荐模型](https://zhuanlan.zhihu.com/p/442845759)
 
