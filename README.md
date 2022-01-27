@@ -31,20 +31,16 @@
 
 ### 0. 特征工程
 + 知乎石塔西 [刀功：谈推荐系统特征工程中的几个高级技巧](https://zhuanlan.zhihu.com/p/448680238)
-```
-mermaid
-graph LR
-    start[开始] --> input[输入A,B,C]
-    input --> conditionA{A是否大于B}
-    conditionA -- YES --> conditionC{A是否大于C}
-    conditionA -- NO --> conditionB{B是否大于C}
-    conditionC -- YES --> printA[输出A]
-    conditionC -- NO --> printC[输出C]
-    conditionB -- YES --> printB[输出B]
-    conditionB -- NO --> printC[输出C]
-    printA --> stop[结束]
-    printC --> stop
-    printB --> stop
+```mermaid
+st[注册印象笔记]-->a
+a{是否已经购买马克飞象}
+a-->|是|b1(您已购买马克飞象可以使用markdown语法)
+a-->|否|b2(您还未能成功购买马克飞象但你可以免费试用10天)
+b1-->c[欢迎使用马克飞象]
+b2-->d{是否要购买马克飞象}
+d-->|是|e1(您已成功购买马克飞象欢迎使用)
+e1-->c
+d-->|否|e2(试用10天后将会到期欢迎购买)
 
 ```
 ### 1. 先验知识
