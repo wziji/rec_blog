@@ -1,6 +1,11 @@
 # rec_blog
 
-新的一年好好学习，go go go!
+新的一年好好学习，准备run run run! 操蛋的经历！！！
+
+## 汇总博客
+
++ 知乎Microstrong [推荐系统在工业界的N+1条实战经验](https://zhuanlan.zhihu.com/p/336628289)
++ github_deepctr [浅梦学习笔记 公众号文章汇总](https://github.com/shenweichen/AlgoNotes)
 
 ## 一. 召回篇
 
@@ -37,13 +42,16 @@
 3. 交叉特征
 4. id类特诊是一等公民，分桶（baidu用到的特征全分桶）
 ```
+
+
 ### 1. 先验知识
 + 知乎石塔西 [先入为主：将先验知识注入推荐模型](https://zhuanlan.zhihu.com/p/442845759)
 
 ### 2. 蒸馏系列
 + 知乎张俊林 [知识蒸馏在推荐系统的应用](https://zhuanlan.zhihu.com/p/143155437)
-+ 公众后Microstrong [深度学习中的知识蒸馏技术（上）](https://mp.weixin.qq.com/s/E7-MF18Y-UeKx694kGFHzA)
-+ 公众后Microstrong [深度学习中的知识蒸馏技术(下)-知识蒸馏与推荐系统](https://mp.weixin.qq.com/s/Noac4YLIimr1HM2fln2bjg)
++ 公众号Microstrong [深度学习中的知识蒸馏技术（上）](https://mp.weixin.qq.com/s/E7-MF18Y-UeKx694kGFHzA)
++ 公众号Microstrong [深度学习中的知识蒸馏技术(下)-知识蒸馏与推荐系统](https://mp.weixin.qq.com/s/Noac4YLIimr1HM2fln2bjg)
++ 公众号爱奇艺技术产品团队 [如何提升链路目标一致性？爱奇艺短视频推荐之粗排模型优化历程](https://mp.weixin.qq.com/s/LZlskUK4dmOd5fLTZIATnQ)，另外还包括特征挖掘、粗排样本调整：原来是线上真实点展，调整为召回随机负采样，精排topk正样本
 
 ### 3. 对比学习
 + 知乎石塔西 [少数派报告：谈推荐场景下的对比学习](https://zhuanlan.zhihu.com/p/435903339)
