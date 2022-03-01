@@ -53,7 +53,9 @@
 + 知乎张俊林 [知识蒸馏在推荐系统的应用](https://zhuanlan.zhihu.com/p/143155437)
 + 公众号Microstrong [深度学习中的知识蒸馏技术（上）](https://mp.weixin.qq.com/s/E7-MF18Y-UeKx694kGFHzA)
 + 公众号Microstrong [深度学习中的知识蒸馏技术(下)-知识蒸馏与推荐系统](https://mp.weixin.qq.com/s/Noac4YLIimr1HM2fln2bjg)
-+ 公众号爱奇艺技术产品团队 [如何提升链路目标一致性？爱奇艺短视频推荐之粗排模型优化历程](https://mp.weixin.qq.com/s/LZlskUK4dmOd5fLTZIATnQ)，另外还包括特征挖掘、粗排样本调整：原来是线上真实点展，调整为召回随机负采样，精排topk正样本
++ 公众号爱奇艺技术产品团队 [如何提升链路目标一致性？爱奇艺短视频推荐之粗排模型优化历程](https://mp.weixin.qq.com/s/LZlskUK4dmOd5fLTZIATnQ)，另外还包括:
+	+ 特征挖掘；
+	+ 粗排样本调整：原来是线上真实点展样本。调整为在召回池中随机负采样，精排topk结果作为正样本。
 
 ### 3. 对比学习
 + 知乎石塔西 [少数派报告：谈推荐场景下的对比学习](https://zhuanlan.zhihu.com/p/435903339)
