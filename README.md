@@ -43,7 +43,7 @@
 4. id类特诊是一等公民，分桶（baidu用到的特征全分桶）
 ```
 
-\color{red}{红色字}
+$\color{red}{红色字}$
 
 + CSDN京城王多鱼 [商品推荐-画像和统计类特征工程](https://blog.csdn.net/wdh315172/article/details/105439491)
 
