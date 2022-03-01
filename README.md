@@ -43,6 +43,8 @@
 4. id类特诊是一等公民，分桶（baidu用到的特征全分桶）
 ```
 
++ CSDN京城王多鱼 [商品推荐-画像和统计类特征工程](https://blog.csdn.net/wdh315172/article/details/105439491)
+
 
 ### 1. 先验知识
 + 知乎石塔西 [先入为主：将先验知识注入推荐模型](https://zhuanlan.zhihu.com/p/442845759)
