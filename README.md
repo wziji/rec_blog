@@ -69,3 +69,12 @@
 
 ### 6. 冷启动
 + 知乎石塔西 [初来乍到：帮助新用户冷启的算法技巧](https://zhuanlan.zhihu.com/p/458843906)
+
+### 7. 多目标
++ CSDN文文学霸 [多任务学习模型PLE](https://blog.csdn.net/abcdefg90876/article/details/108898482)
+	+ 另外文中有 共享网络、Asymmetry Sharing、Customized Sharing、MMOE等网络结构的介绍
+	+ 代码可参考：[deepctr_models_multitask_ple.py](https://github.com/shenweichen/DeepCTR/blob/master/deepctr/models/multitask/ple.py)
+
+### 8. NLP方向
++ CSDN废柴当自强 [一文读懂BERT(原理篇)](https://blog.csdn.net/jiaowoshouzi/article/details/89073944)
++ CSDN京城王多鱼 [ERNIE模型系列]()
