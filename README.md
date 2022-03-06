@@ -43,6 +43,7 @@
 + 知乎 砍手豪 [探讨特征工程的方法论](https://zhuanlan.zhihu.com/p/466685415)
 + 知乎 问题 [特征工程到底是什么？](https://www.zhihu.com/question/29316149/answer/2346832545)
 + CSDN 京城王多鱼 [商品推荐-画像和统计类特征工程](https://blog.csdn.net/wdh315172/article/details/105439491)
++ 美团技术团队 [7次KDD Cup&Kaggle冠军的经验分享：从多领域优化到AutoML框架](https://tech.meituan.com/2022/01/06/7-kdd-cup-kaggle-automl.html)
 
 
 ### 1. 先验知识
