@@ -38,7 +38,9 @@
 + 知乎 石塔西 [刀功：谈推荐系统特征工程中的几个高级技巧](https://zhuanlan.zhihu.com/p/448680238)
 	+ 1. 统计类：用户 -> (对) 物料 -> (在) 时间 -> (进行) 动作 -> (的) 统计对象 -> 统计方法
 	+ 2. 排序特征：eg 小资文青喜欢的top10电影之一
-	+ 3. 交叉特征：文中提到了匹配度。加减乘除应该都算特征交叉，例如DIN里的相减、相乘，见[DeepCTR](https://github.com/shenweichen/DeepCTR/blob/9f155590cc44c14821dcb691811656eb2ef2f49b/deepctr/layers/core.py#L92)；BERT里的三个向量相加，见[为什么 Bert 的三个 Embedding 可以进行相加？](https://www.zhihu.com/question/374835153/answer/1070264662)
+	+ 3. 交叉特征：文中提到了匹配度。加减乘除应该都算特征交叉，例如：
+	> DIN里的相减、相乘，见[DeepCTR](https://github.com/shenweichen/DeepCTR/blob/9f155590cc44c14821dcb691811656eb2ef2f49b/deepctr/layers/core.py#L92)；
+	> BERT里的三个向量相加，见[为什么 Bert 的三个 Embedding 可以进行相加？](https://www.zhihu.com/question/374835153/answer/1070264662)
 	+ 4. id类特诊是一等公民，分桶（某du用到的特征全部进行分桶处理）
 + 知乎 砍手豪 [探讨特征工程的方法论](https://zhuanlan.zhihu.com/p/466685415)
 + 知乎 问题 [特征工程到底是什么？](https://www.zhihu.com/question/29316149/answer/2346832545)
