@@ -70,7 +70,8 @@
 + 公众号 Microstrong [YouTube采样修正的双塔模型论文精读](https://mp.weixin.qq.com/s/us4qGD3LDgLmPy2m-qq-iw)
 
 ### 6. 冷启动
-+ 知乎 石塔西 [初来乍到：帮助新用户冷启的算法技巧](https://zhuanlan.zhihu.com/p/458843906)
++ 知乎 石塔西 [初来乍到：帮助新用户冷启的算法技巧](https://zhuanlan.zhihu.com/p/458843906)，核心问题：找到更多的信息
++ Airbnb ：Topk个相似房源的Embedding均值作为当前房屋的Embedding，衡量房源的相近程度可以采用位置、价格、房源类型等，且要求距离在10英里内。
 
 ### 7. 多目标
 + 公众号 浅梦学习笔记 [多任务学习在推荐算法中的应用](https://mp.weixin.qq.com/s/4e7gwpP3XHBAMNX9M0nRgw)
