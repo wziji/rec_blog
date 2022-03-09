@@ -58,7 +58,7 @@
 + 公众号 Microstrong [深度学习中的知识蒸馏技术（上）](https://mp.weixin.qq.com/s/E7-MF18Y-UeKx694kGFHzA)
 + 公众号 Microstrong [深度学习中的知识蒸馏技术(下)-知识蒸馏与推荐系统](https://mp.weixin.qq.com/s/Noac4YLIimr1HM2fln2bjg)
 + 公众号 爱奇艺技术产品团队 [如何提升链路目标一致性？爱奇艺短视频推荐之粗排模型优化历程](https://mp.weixin.qq.com/s/LZlskUK4dmOd5fLTZIATnQ)，另外还包括:
-	+ 统计特征特征挖掘；
+	+ 统计特征挖掘，其实挖掘逻辑上遵循`石塔西`的 [刀功：谈推荐系统特征工程中的几个高级技巧](https://zhuanlan.zhihu.com/p/448680238)；
 	+ 粗排样本调整：原来是线上真实点展样本。调整为在召回池中随机负采样，精排topk结果作为正样本。
 
 ### 3. 对比学习
