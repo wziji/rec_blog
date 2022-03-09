@@ -44,6 +44,7 @@
 	+ id类特征是一等公民
 	+ 连续值特征分桶（某du用到的特征全部进行分桶处理）
 + 知乎 砍手豪 [探讨特征工程的方法论](https://zhuanlan.zhihu.com/p/466685415)
+	+ 直呼文中提到的`交叉特征`，牛逼，看原文学习下吧 ~
 + 知乎 问题 [特征工程到底是什么？](https://www.zhihu.com/question/29316149/answer/2346832545)
 + CSDN 京城王多鱼 [商品推荐-画像和统计类特征工程](https://blog.csdn.net/wdh315172/article/details/105439491)
 + 美团技术团队 [7次KDD Cup&Kaggle冠军的经验分享：从多领域优化到AutoML框架](https://tech.meituan.com/2022/01/06/7-kdd-cup-kaggle-automl.html)
@@ -65,25 +66,23 @@
 + 知乎 张俊林 [对比学习（Contrastive Learning）:研究进展精要](https://zhuanlan.zhihu.com/p/367290573)
 + 知乎 张俊林 [对比学习视角:重新审视推荐系统的召回粗排模型](https://zhuanlan.zhihu.com/p/424198603)
 
-### 4. 召回强负样本
+### 4. 召回强负样本 & 采样策略
 + 知乎 石塔西 [负样本为王：评Facebook的向量化召回算法](https://zhuanlan.zhihu.com/p/165064102)
 + 公众号 蘑菇先生 [KDD'21 | 揭秘Facebook升级版语义搜索技术](https://mp.weixin.qq.com/s/mkC8lSbBXWMUIXUg3KrAjQ)
-
-### 5. 采样策略
 + CSDN 京城王多鱼 [召回负样本采样方法](https://blog.csdn.net/wdh315172/article/details/123328581)
 + 公众号 Microstrong [YouTube采样修正的双塔模型论文精读](https://mp.weixin.qq.com/s/us4qGD3LDgLmPy2m-qq-iw)
 
-### 6. 冷启动
+### 5. 冷启动
 + 知乎 石塔西 [初来乍到：帮助新用户冷启的算法技巧](https://zhuanlan.zhihu.com/p/458843906)，核心问题：找到更多的信息
 + Airbnb ：Topk个相似房源的Embedding均值作为当前房屋的Embedding，衡量房源的相近程度可以采用位置、价格、房源类型等，且要求距离在10英里内。
 
-### 7. 多目标
+### 6. 多目标
 + 公众号 浅梦学习笔记 [多任务学习在推荐算法中的应用](https://mp.weixin.qq.com/s/4e7gwpP3XHBAMNX9M0nRgw)
 + 知乎 Recommender [推荐系统中的多任务学习与多目标排序工程实践（上）](https://zhuanlan.zhihu.com/p/422925553)
 + CSDN 文文学霸 [[腾讯]RecSys2020最佳长论文-多任务学习模型PLE](https://blog.csdn.net/abcdefg90876/article/details/108898482)
 	+ 另外文中有 共享网络、Asymmetry Sharing、Customized Sharing、MMOE等网络结构的介绍
 	+ 代码可参考：[deepctr_models_multitask_ple.py](https://github.com/shenweichen/DeepCTR/blob/master/deepctr/models/multitask/ple.py)
 
-### 8. NLP方向
+### 7. NLP方向
 + CSDN 废柴当自强 [一文读懂BERT(原理篇)](https://blog.csdn.net/jiaowoshouzi/article/details/89073944)
 + CSDN 京城王多鱼 [ERNIE模型系列]()
