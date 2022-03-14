@@ -78,6 +78,7 @@
 
 ### 6. 多目标
 + 公众号 浅梦学习笔记 [多任务学习在推荐算法中的应用](https://mp.weixin.qq.com/s/4e7gwpP3XHBAMNX9M0nRgw)
++ 公众号 阿里云云栖号 [多任务多目标 CTR 预估技术](https://mp.weixin.qq.com/s/tcZoQrPylVxsVc67gUN45w)
 + 知乎 Recommender [推荐系统中的多任务学习与多目标排序工程实践（上）](https://zhuanlan.zhihu.com/p/422925553)
 + CSDN 文文学霸 [[腾讯]RecSys2020最佳长论文-多任务学习模型PLE](https://blog.csdn.net/abcdefg90876/article/details/108898482)
 	+ 另外文中有 共享网络、Asymmetry Sharing、Customized Sharing、MMOE等网络结构的介绍
