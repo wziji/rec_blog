@@ -46,6 +46,7 @@
 + 知乎 砍手豪 [探讨特征工程的方法论](https://zhuanlan.zhihu.com/p/466685415)
 	+ 直呼文中提到的`交叉特征`，牛逼，看原文学习下吧 ~
 + 知乎 问题 [特征工程到底是什么？](https://www.zhihu.com/question/29316149/answer/2346832545)
++ 公众号 腾讯技术工程 [浅谈微视推荐系统中的特征工程](https://mp.weixin.qq.com/s/EgiSIJCRfiRLKwHUC1m46A)
 + CSDN 京城王多鱼 [商品推荐-画像和统计类特征工程](https://blog.csdn.net/wdh315172/article/details/105439491)
 + 美团技术团队 [7次KDD Cup&Kaggle冠军的经验分享：从多领域优化到AutoML框架](https://tech.meituan.com/2022/01/06/7-kdd-cup-kaggle-automl.html)
 
