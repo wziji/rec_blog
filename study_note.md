@@ -2,7 +2,7 @@
 
 ## 1. 多目标任务
 
-### 爱奇艺
+### 1.1 爱奇艺
 
 + [一矢多穿：多目标排序在爱奇艺短视频推荐中的应用](https://mp.weixin.qq.com/s/JOQdyQDCFStWXdxTckUa5Q) 2021-06-25
 	+ 融合时长权重的点击率预估模型
@@ -22,16 +22,20 @@
 		+ PSO进化优化算法
 			+ 根据指标的重要性对完播率分类的AUC、播放时长的PNR等确定权重
 
+### 1.2 阿里巴巴
++ [阿里提出针对多目标优化的全新算法框架，同时提升电商推荐场景 GMV](https://k.sina.com.cn/article_1746173800_68147f6802700p48k.html?from=tech) 2019-10-20
+
+	+ $$L_{GMV}(\theta, x, y, z) = -\frac{1}{N} \sum_{j=1}^{N} h(price_j) x log(P(z_j=1 | \theta, x_j))$$
+
 ## 2. 多兴趣召回
 
-### 爱奇艺
+### 1.1 爱奇艺
 + [千人万面，奇妙自见：爱奇艺短视频推荐技术中多兴趣召回技术的演变](https://mp.weixin.qq.com/s/T2G8L820haEbvXgryvEWHg) 2021-04-23
 	+ PinnerSage聚类多兴趣召回
 	+ MIND多兴趣网络
 		+ 使用transformer结构代替胶囊网络
 		+ 对兴趣向量进行正则化约束防止出现兴趣向量过于相似的问题
 		+ 负采样采用sampled softmax loss
-
 + 
 
 ## 3. 负样本
