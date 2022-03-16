@@ -6,6 +6,7 @@
 
 + 知乎 Microstrong [推荐系统在工业界的N+1条实战经验](https://zhuanlan.zhihu.com/p/336628289)
 + github deepctr [浅梦学习笔记 公众号文章汇总](https://github.com/shenweichen/AlgoNotes)
++ 知乎 缄默笔记 [推荐系统(十一) 2021-2022年工业界推荐算法实践经验汇总](https://zhuanlan.zhihu.com/p/481610113)
 
 ## 一. 召回篇
 
