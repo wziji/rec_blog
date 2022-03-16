@@ -36,7 +36,7 @@
 		+ 使用transformer结构代替胶囊网络
 		+ 对兴趣向量进行正则化约束防止出现兴趣向量过于相似的问题
 		+ 负采样采用sampled softmax loss
-+ 
++ aaa
 
 ## 3. 负样本
 
