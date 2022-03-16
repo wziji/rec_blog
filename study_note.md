@@ -25,7 +25,7 @@
 ### 1.2 阿里巴巴
 + [阿里提出针对多目标优化的全新算法框架，同时提升电商推荐场景 GMV](https://k.sina.com.cn/article_1746173800_68147f6802700p48k.html?from=tech) 2019-10-20
 
-$$L_{GMV}(\theta, x, y, z) = -\frac{1}{N} \sum_{j=1}^{N} h(price_j) x log(P(z_j=1 | \theta, x_j))$$
+![公式](https://latex.codecogs.com/svg.image?L_{GMV}(\theta,x,y,z)=-\frac{1}{N}\sum_{j=1}^{N}h(price_j)\cdot\log(P(z_j=1|\theta,x_j)))
 
 ## 2. 多兴趣召回
 
