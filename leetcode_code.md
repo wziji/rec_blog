@@ -151,3 +151,42 @@
 
 	        return res
 	```
+
+## 4. 滑动字符串
+
++ [30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
+
+	+ 思路：滑动input_str，连续子串是否在候选集合中
+
+	+ 题解：
+	```python
+	class Solution:
+	    def findSubstring(self, s, words):
+	        import copy
+	        words_length = len(words[0]) * len(words)
+	        word_len = len(words[0])
+
+	        if words_length > len(s):
+	            return []
+
+	        result = []
+	        for inx in range(len(s) - words_length + 1):
+	            tmp_words = copy.deepcopy(words)
+	            tmp_inx = inx
+
+	            while tmp_words:
+	                if tmp_inx > len(s):
+	                    break
+
+	                tmp_str = s[tmp_inx : tmp_inx + word_len]
+	                if tmp_str in tmp_words:
+	                    tmp_inx += word_len
+	                    tmp_words.remove(tmp_str) # 移除候选集合中的“已经拼上的子串”
+	                else:
+	                    break
+
+	                if not tmp_words: # 拼接完成
+	                    result.append(inx)
+
+	        return result
+	```
