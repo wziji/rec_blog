@@ -121,3 +121,33 @@
 
 	        return sorted(tmp_dict.items(), key=lambda x: x[0], reverse=False)[0][1]
 	```
+
+## 3. 递归
++ [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/)
+	+ 思路：如下套路
+	```python
+	待补充。。。
+	```
+	+ 题解：
+	```python
+	class Solution:
+	    def generateParenthesis(self, n):
+
+	        res = []
+
+	        def df(tmp_str, left, right):
+	            if left == right == n:
+	                res.append(tmp_str)
+	                return
+
+	            if right > left:
+	                return
+	            if left < n:
+	                df(tmp_str+"(", left+1, right)
+	            if right < n:
+	                df(tmp_str+")", left, right+1)
+
+	        df("", 0, 0)
+
+	        return res
+	```
