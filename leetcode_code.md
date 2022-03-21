@@ -28,7 +28,7 @@
 	```
 
 
-## 2. 双指针
+## 2. 左右双指针
 + [15. 三数之和](https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/)
 	+ 思路：排序+双指针
 
@@ -122,6 +122,32 @@
 	        return sorted(tmp_dict.items(), key=lambda x: x[0], reverse=False)[0][1]
 	```
 
++ [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)
+	+ 思路：左右双指针 + 动态规划
+	+ 题解：
+	```python
+	class Solution:
+	    def maxArea(self, height: List[int]) -> int:
+	        if not height:
+	            return 0
+
+	        left = 0
+	        right = len(height) - 1
+	        max_value = 0
+
+	        while left <= right:
+	            tmp_value = (right - left) * min([height[left], height[right]])
+
+	            if height[left] <= height[right]:
+	                left += 1
+	            else:
+	                right -= 1
+
+	            max_value = max(max_value, tmp_value)
+	        return max_value
+	```
+
+
 ## 3. 递归
 + [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/)
 	+ 思路：如下套路
@@ -185,7 +211,7 @@
 	                else:
 	                    break
 
-	                if not tmp_words: # 拼接完成
+	                if not tmp_words: # 当候选集中没有字符串时，代表拼接完成
 	                    result.append(inx)
 
 	        return result
