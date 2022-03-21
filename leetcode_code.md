@@ -3,9 +3,7 @@
 ## 1. 动态规划
 
 + [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
-
 	+ 思路：（1）标记重复元素位置的最大index；（2）记录最大长度
-
 	+ 题解：
 	```python
 	class Solution:
@@ -26,6 +24,7 @@
 
 	        return max(max_length, inx + 1 - tmp_start)
 	```
+
 + [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/)
 	+ 思路：存储索引，"(" 时增加索引，")" 弹出索引
 	+ 题解：
@@ -55,9 +54,7 @@
 ## 2. 左右双指针
 + [15. 三数之和](https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/)
 	+ 思路：排序+双指针
-
 	+ 题解：
-
 	```python
 	class Solution:
 	    def threeSum(self, nums):
@@ -173,6 +170,7 @@
 
 
 ## 3. 递归
+
 + [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/)
 	+ 思路：如下套路
 	```python
@@ -205,9 +203,7 @@
 ## 4. 滑动字符串
 
 + [30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
-
 	+ 思路：滑动input_str，判断连续子串是否在候选集合中
-
 	+ 题解：
 	```python
 	class Solution:
@@ -246,7 +242,6 @@
 + [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/
 )
 	+ 思路：以1个节点、2个节点进行中心扩散
-
 	+ 题解：
 	```python
 	class Solution:
