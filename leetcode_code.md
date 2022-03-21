@@ -26,7 +26,31 @@
 
 	        return max(max_length, inx + 1 - tmp_start)
 	```
++ [32. 最长有效括号](https://leetcode-cn.com/problems/longest-valid-parentheses/)
+	+ 思路：存储索引，"(" 时增加索引，")" 弹出索引
+	+ 题解：
+	```python
+	class Solution:
+	    def longestValidParentheses(self, s: str) -> int:
+	        if not s:
+	            return 0
 
+	        max_length = 0
+	        tmp_list = [-1] # 存储索引
+
+	        for inx, value in enumerate(s):
+	            if value == "(":
+	                tmp_list.append(inx) # 1. 索引进入
+	            else:
+	                tmp_list.pop() # 2. 弹出索引
+	                if tmp_list:
+	                    max_length = max(max_length, inx - tmp_list[-1])
+
+	                if not tmp_list:
+	                    tmp_list.append(inx) # 3. 持续为")"时，tmp_list将为空。此时增加inx当做第一个索引号。
+
+	        return max_length
+	```
 
 ## 2. 左右双指针
 + [15. 三数之和](https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/)
