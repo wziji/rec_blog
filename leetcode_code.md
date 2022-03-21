@@ -9,22 +9,22 @@
 	+ 题解：
 	```python
 	class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        if not s:
-            return 0
+	    def lengthOfLongestSubstring(self, s: str) -> int:
+	        if not s:
+	            return 0
 
-        max_length = 0
-        tmp_start = 0
-        tmp_dict = {}
+	        max_length = 0
+	        tmp_start = 0
+	        tmp_dict = {}
 
-        for inx, value in enumerate(s):
-            if value in tmp_dict:
-                max_length = max(max_length, inx - tmp_start)
-                tmp_start = max(tmp_start, tmp_dict[value] + 1)
+	        for inx, value in enumerate(s):
+	            if value in tmp_dict:
+	                max_length = max(max_length, inx - tmp_start)
+	                tmp_start = max(tmp_start, tmp_dict[value] + 1)
 
-            tmp_dict[value] = inx
+	            tmp_dict[value] = inx
 
-        return max(max_length, inx + 1 - tmp_start)
+	        return max(max_length, inx + 1 - tmp_start)
 	```
 
 
@@ -35,47 +35,47 @@
 	+ 题解：
 
 	```python
-class Solution:
-    def threeSum(self, nums):
+	class Solution:
+	    def threeSum(self, nums):
 
-        if len(nums) < 3:
-            return []
+	        if len(nums) < 3:
+	            return []
 
-        result_list = []
-        k = 0
+	        result_list = []
+	        k = 0
 
-        nums = sorted(nums)
-        print(nums)
+	        nums = sorted(nums)
+	        print(nums)
 
-        for k in range(len(nums) - 2):
-            if nums[k] > 0:
-                break
+	        for k in range(len(nums) - 2):
+	            if nums[k] > 0:
+	                break
 
-            if k >= 1 and nums[k] == nums[k-1]:
-                continue
+	            if k >= 1 and nums[k] == nums[k-1]:
+	                continue
 
-            left = k + 1
-            right = len(nums) - 1
+	            left = k + 1
+	            right = len(nums) - 1
 
-            while left < right:
-                s = nums[k] + nums[left] + nums[right]
+	            while left < right:
+	                s = nums[k] + nums[left] + nums[right]
 
-                if s > 0:
-                    right -= 1
-                    while left < right and nums[right] == nums[right+1]:
-                        right -= 1
-                elif s < 0:
-                    left += 1
-                    while left < right and nums[left] == nums[left-1]:
-                        left += 1
-                else:
-                    result_list.append([nums[k], nums[left], nums[right]])
-                    right -= 1
-                    left += 1
-                    while left < right and nums[right] == nums[right+1]:
-                        right -= 1
-                    while left < right and nums[left] == nums[left-1]:
-                        left += 1
+	                if s > 0:
+	                    right -= 1
+	                    while left < right and nums[right] == nums[right+1]:
+	                        right -= 1
+	                elif s < 0:
+	                    left += 1
+	                    while left < right and nums[left] == nums[left-1]:
+	                        left += 1
+	                else:
+	                    result_list.append([nums[k], nums[left], nums[right]])
+	                    right -= 1
+	                    left += 1
+	                    while left < right and nums[right] == nums[right+1]:
+	                        right -= 1
+	                    while left < right and nums[left] == nums[left-1]:
+	                        left += 1
 
-        return result_list
+	        return result_list
 	```
