@@ -19,8 +19,8 @@
 
 	        for inx, value in enumerate(s):
 	            if value in tmp_dict:
-	                max_length = max(max_length, inx - tmp_start)
-	                tmp_start = max(tmp_start, tmp_dict[value] + 1)
+	                max_length = max(max_length, inx - tmp_start)  # 记录最大值
+	                tmp_start = max(tmp_start, tmp_dict[value] + 1)# 记录最大起始位置
 
 	            tmp_dict[value] = inx
 
@@ -43,15 +43,13 @@
 
 	        result_list = []
 	        k = 0
-
 	        nums = sorted(nums)
-	        print(nums)
 
 	        for k in range(len(nums) - 2):
-	            if nums[k] > 0:
+	            if nums[k] > 0: # 三个元素全部大于0
 	                break
 
-	            if k >= 1 and nums[k] == nums[k-1]:
+	            if k >= 1 and nums[k] == nums[k-1]: # 跳过重复数据
 	                continue
 
 	            left = k + 1
@@ -62,14 +60,58 @@
 
 	                if s > 0:
 	                    right -= 1
-	                    while left < right and nums[right] == nums[right+1]:
+	                    while left < right and nums[right] == nums[right+1]:# 跳过重复数据
 	                        right -= 1
 	                elif s < 0:
+	                    left += 1
+	                    while left < right and nums[left] == nums[left-1]:# 跳过重复数据
+	                        left += 1
+	                else:
+	                    result_list.append([nums[k], nums[left], nums[right]])
+	                    right -= 1
+	                    left += 1
+	                    while left < right and nums[right] == nums[right+1]:# 跳过重复数据
+	                        right -= 1
+	                    while left < right and nums[left] == nums[left-1]:# 跳过重复数据
+	                        left += 1
+
+	        return result_list
+	```
+
++ [16. 最接近的三数之和](https://leetcode-cn.com/problems/3sum-closest/)
+	+ 思路：（1）排序+双指针；（2）记录 {"3数和与target的差":"3数和"}
+	+ 题解：
+	```python
+	class Solution:
+	    def threeSumClosest(self, nums, target):
+
+	        tmp_dict = {}
+
+	        if not nums:
+	            return 0
+
+	        nums = sorted(nums)
+
+	        for k in range(len(nums) - 2):
+	            if k >= 1 and nums[k] == nums[k-1]:
+	                continue
+
+	            left = k + 1
+	            right = len(nums) - 1
+
+	            while left < right:
+	                s = nums[k] + nums[left] + nums[right]
+	                tmp_dict[abs(s - target)] = s
+
+	                if s > target:
+	                    right -= 1
+	                    while left < right and nums[right] == nums[right+1]:
+	                        right -= 1
+	                elif s < target:
 	                    left += 1
 	                    while left < right and nums[left] == nums[left-1]:
 	                        left += 1
 	                else:
-	                    result_list.append([nums[k], nums[left], nums[right]])
 	                    right -= 1
 	                    left += 1
 	                    while left < right and nums[right] == nums[right+1]:
@@ -77,5 +119,5 @@
 	                    while left < right and nums[left] == nums[left-1]:
 	                        left += 1
 
-	        return result_list
+	        return sorted(tmp_dict.items(), key=lambda x: x[0], reverse=False)[0][1]
 	```
