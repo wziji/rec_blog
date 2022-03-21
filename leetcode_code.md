@@ -156,7 +156,7 @@
 
 + [30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
 
-	+ 思路：滑动input_str，连续子串是否在候选集合中
+	+ 思路：滑动input_str，判断连续子串是否在候选集合中
 
 	+ 题解：
 	```python
@@ -189,4 +189,67 @@
 	                    result.append(inx)
 
 	        return result
+	```
+
+## 5. 中心扩散法
+
++ [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/
+)
+	+ 思路：以1个节点、2个节点进行中心扩散
+
+	+ 题解：
+	```python
+	class Solution:
+	    def longestPalindrome(self, s: str) -> str:
+
+	        if not s:
+	            return 0
+
+	        if len(s) == 1:
+	            return s
+
+	        max_str = s[0]
+	        left_min = 0
+	        right_max = len(s) - 1
+
+	        for inx, value in enumerate(s):
+	            tmp_max_str = ""
+
+	            # 以1个为中心点
+	            left = inx - 1
+	            right = inx + 1
+	            while left >= left_min and right <= right_max and s[left] == s[right]:
+	                tmp_max_str = s[left:right+1]
+	                left -= 1
+	                right += 1
+
+	            if len(tmp_max_str) >= len(max_str):
+	                max_str = tmp_max_str
+
+	            # 这个条件可以节省时间
+	            if len(max_str) == len(s):
+	                return max_str
+
+
+	            # 以2个为中心点
+	            left = inx - 1
+	            right = inx + 1            
+	            if right <= right_max and s[inx] == s[right]:
+	                if len(tmp_max_str) <= 2:
+	                    tmp_max_str = s[inx: right+1]
+
+	                right = right + 1
+	                while left >= left_min and right <= right_max and s[left] == s[right]:
+	                    tmp_max_str = s[left:right+1]
+	                    left -= 1
+	                    right += 1
+
+	            if len(tmp_max_str) >= len(max_str):
+	                max_str = tmp_max_str
+
+	            # 这个条件可以节省时间
+	            if len(max_str) == len(s):
+	                return max_str
+
+	        return max_str
 	```
