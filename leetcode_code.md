@@ -51,6 +51,42 @@
 	        return max_length
 	```
 
+
++ [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
+	+ 思路：双指针，min(max(left), max(right))
+		+ 1. 维护 左侧最大值，右侧最大值，当做“桶壁”
+		+ 2. 选择两者的最小值，视为“能盛水的短板”
+	+ 题解：
+	```python
+	class Solution:
+	    def trap(self, height: List[int]) -> int:
+	        if len(height) <= 2:
+	            return 0
+
+	        result = 0
+	        left = 0
+	        right = len(height) - 1
+
+	        left_max = height[0]
+	        right_max = height[-1]
+
+
+	        while left < right:
+	            min_value = min(left_max, right_max)
+	            if height[left] <= height[right]:
+	                result += min_value - height[left]
+	                left += 1
+	                left_max = max(left_max, height[left])
+	                
+	            elif height[left] > height[right]:
+	                result += min_value - height[right]
+	                right -= 1
+	                right_max = max(right_max, height[right])
+	                
+	        return result
+	```
+
+
 ## 2. 左右双指针
 + [15. 三数之和](https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/)
 	+ 思路：排序+双指针
