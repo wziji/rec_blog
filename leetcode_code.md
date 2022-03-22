@@ -51,7 +51,6 @@
 	        return max_length
 	```
 
-
 + [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
 	+ 思路：双指针，min(max(left), max(right))
 		+ 1. 维护 左侧最大值，右侧最大值，当做“桶壁”
@@ -86,6 +85,68 @@
 	        return result
 	```
 
++ [45. 跳跃游戏 II](https://leetcode-cn.com/problems/jump-game-ii/)
+	+ 思路：贪心法
+		+ 1. 每一次跳跃时更新能到达的最远距离；
+		+ 2. 当前索引与边界相等时，才会必须跳跃一次【跳跃点和维护的边界点（记录跳跃次数的点）并不一致，但是两者的总次数是相等的】
+	+ 题解：
+	```python
+	class Solution:
+	    def jump(self, nums: List[int]) -> int:
+
+	        steps = 0
+	        max_distance = 0
+	        end_distance = 0
+
+	        for i in range(len(nums)-1):
+	            max_distance = max(max_distance, nums[i]+i)
+
+	            if i == end_distance:
+	                end_distance = max_distance
+	                steps += 1
+
+	        return steps
+	```
+
++ [53. 最大子数组和](https://leetcode-cn.com/problems/maximum-subarray/)
+	+ 思路：维护（1）当前最大值；（2）全局最大值
+	+ 题解：
+	```python
+	class Solution:
+	    def maxSubArray(self, nums: List[int]) -> int:
+	        if not nums:
+	            return
+
+	        cur_max_value = nums[0]
+	        max_value = nums[0]
+
+	        for value in nums[1:]:
+	            # 当cur_max_value为正，选择cur_max_value+value结果
+	            # 当cur_max_value为负，断舍离，弃之。选择value结果
+	            cur_max_value = max(cur_max_value + value, value)
+	            max_value = max(max_value, cur_max_value)
+
+	        return max_value
+	```
++ [55. 跳跃游戏](https://leetcode-cn.com/problems/jump-game/)
+	+ 思路：判断“跳的最远位置”是否一直掉到“坑”里
+	+ 题解：
+	```python
+	class Solution:
+	    def canJump(self, nums: List[int]) -> bool:
+	        if len(nums) == 1:
+	            return True
+
+	        max_length = 0
+
+	        for inx in range(len(nums)-1):
+	            max_length = max(max_length, inx + nums[inx])
+	            if nums[inx] == 0 and max_length == inx: # 跳的最远位置一直掉到“坑”里
+	                return False
+	        return True
+	```
+
+	
 
 ## 2. 左右双指针
 + [15. 三数之和](https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/)
