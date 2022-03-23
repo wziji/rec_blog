@@ -167,41 +167,98 @@
     ```
 
 + [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/)
-	+ 思路：与62题类似，只是增加了障碍物，把障碍物置为`0`即可，代表此路不通
-	+ 题解：
-	```python
-	import copy
-	class Solution:
-	    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
-	        m = len(obstacleGrid)
-	        n = len(obstacleGrid[0])
+    + 思路：与62题类似，只是增加了障碍物，把障碍物置为`0`即可，代表此路不通
+    + 题解：
+    ```python
+    import copy
+    class Solution:
+        def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+            m = len(obstacleGrid)
+            n = len(obstacleGrid[0])
 
-	        dp = copy.deepcopy(obstacleGrid)
-	        for index, ch in enumerate(dp[0]):
-	            if ch == 0:
-	                dp[0][index] = 1
-	            else:
-	                for i in range(index, len(dp[0])):
-	                    dp[0][i] = 0
-	                break
+            dp = copy.deepcopy(obstacleGrid)
+            for index, ch in enumerate(dp[0]):
+                if ch == 0:
+                    dp[0][index] = 1
+                else:
+                    for i in range(index, len(dp[0])):
+                        dp[0][i] = 0
+                    break
 
-	        for index, ch in enumerate(obstacleGrid):
-	            if ch[0] == 0:
-	                dp[index][0] = 1
-	            else:
-	                for i in range(index, len(obstacleGrid)):
-	                    dp[i][0] = 0
-	                break
+            for index, ch in enumerate(obstacleGrid):
+                if ch[0] == 0:
+                    dp[index][0] = 1
+                else:
+                    for i in range(index, len(obstacleGrid)):
+                        dp[i][0] = 0
+                    break
 
-	        for i in range(1, m):
-	            for j in range(1, n):
-	                if dp[i][j] == 1:
-	                    dp[i][j] = 0
-	                else:
-	                    dp[i][j] = dp[i-1][j] + dp[i][j-1]
+            for i in range(1, m):
+                for j in range(1, n):
+                    if dp[i][j] == 1:
+                        dp[i][j] = 0
+                    else:
+                        dp[i][j] = dp[i-1][j] + dp[i][j-1]
 
-	        return dp[-1][-1]
-	```
+            return dp[-1][-1]
+    ```
+
++ [64. 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/)
+    + 思路：与`62`和`63`一样，先处理第一行和第一列
+    + 题解：
+    ```python
+    class Solution:
+        def minPathSum(self, grid: List[List[int]]) -> int:
+            row = len(grid)
+            col = len(grid[0])
+
+            # 处理第一行，依次相加
+            for i in range(1, col):
+                grid[0][i] += grid[0][i-1]
+
+            for j in range(1, row):
+                grid[j][0] += grid[j-1][0]
+
+            for i in range(1, row):
+                for j in range(1, col):
+                    grid[i][j] += min(grid[i-1][j], grid[i][j-1])
+
+            return grid[-1][-1]
+    ```
+
++ [72. 编辑距离](https://leetcode-cn.com/problems/edit-distance/)
+    + 思路：与`62`和`63`和`64`一样，[先处理第一行和第一列，再处理内部数据](https://leetcode-cn.com/problems/edit-distance/solution/bian-ji-ju-chi-tu-jie-dp-zui-qing-xi-yi-abfgl/)
+    + 题解：
+    ```python
+    class Solution:
+        def minDistance(self, word1: str, word2: str) -> int:
+
+            m = len(word1) # 5
+            n = len(word2) # 3
+            dp = [[0] * (n+1) for _ in range(m+1)] # 保持这种写法
+
+            # 处理第一行，代表word1为空
+            for i in range(1, m+1):
+                dp[i][0] = dp[i-1][0] + 1
+
+            # 处理第一列，代表word2为空
+            for j in range(1, n+1):
+                dp[0][j] = dp[0][j-1] + 1
+
+            for i in range(1, m+1):
+                for j in range(1, n+1):
+                    if word1[i-1] == word2[j-1]:
+                        dp[i][j] = dp[i-1][j-1]
+                    else:
+                        dp[i][j] = min(
+                            dp[i][j-1], 
+                            dp[i-1][j],
+                            dp[i-1][j-1]
+                        ) + 1
+
+            return dp[-1][-1]
+    ```
+
 
 ## 2. 左右双指针
 + [15. 三数之和](https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/)
