@@ -147,7 +147,7 @@
     ```
 
 + [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/)
-    + 思路：（1）第一行和第一列设置为1；（2）dp[i][j]从dp[i-1][j]或dp[i][j-1]来的
+    + 思路：（1）第一行和第一列设置为`1`；（2）`dp[i][j]`从`dp[i-1][j]`或`dp[i][j-1]`来的
     + 题解：
     ```python
     class Solution:
@@ -185,7 +185,6 @@
 	                    dp[0][i] = 0
 	                break
 
-
 	        for index, ch in enumerate(obstacleGrid):
 	            if ch[0] == 0:
 	                dp[index][0] = 1
@@ -193,8 +192,6 @@
 	                for i in range(index, len(obstacleGrid)):
 	                    dp[i][0] = 0
 	                break
-
-	        #print(dp)
 
 	        for i in range(1, m):
 	            for j in range(1, n):
