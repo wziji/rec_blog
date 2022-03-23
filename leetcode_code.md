@@ -17,8 +17,8 @@
 
             for inx, value in enumerate(s):
                 if value in tmp_dict:
-                    max_length = max(max_length, inx - tmp_start)  # 记录最大值
-                    tmp_start = max(tmp_start, tmp_dict[value] + 1)# 记录最大起始位置
+                    max_length = max(max_length, inx - tmp_start)   # 记录最大值
+                    tmp_start = max(tmp_start, tmp_dict[value] + 1) # 记录最大起始位置，与之前的无用的内容割裂开
 
                 tmp_dict[value] = inx
 
@@ -46,7 +46,8 @@
                         max_length = max(max_length, inx - tmp_list[-1])
 
                     if not tmp_list:
-                        tmp_list.append(inx) # 3. 持续为")"时，tmp_list将为空。此时增加inx当做第一个索引号。
+                        # 3. 持续为")"时，tmp_list将为空。此时增加inx当做第一个索引号，与之前的无用的内容割裂开
+                        tmp_list.append(inx) 
 
             return max_length
     ```
@@ -379,7 +380,6 @@
 
 
 ## 3. 递归
-
 + [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/)
     + 思路：如下套路
     ```python
@@ -410,7 +410,6 @@
     ```
 
 ## 4. 滑动字符串
-
 + [30. 串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/)
     + 思路：滑动input_str，判断连续子串是否在候选集合中
     + 题解：
@@ -447,7 +446,6 @@
     ```
 
 ## 5. 中心扩散法
-
 + [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/)
     + 思路：以1个节点、2个节点进行中心扩散
     + 题解：
