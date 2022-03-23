@@ -506,3 +506,29 @@
 
             return max_str
     ```
+
+## 6. 单调栈
++ [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+    + 思路：单调递增栈，`左右哨兵索引差 * 栈顶值`
+    + 题解：
+    ```python
+    class Solution:
+        def largestRectangleArea(self, heights: List[int]) -> int:
+            if not heights:
+                return 0
+            if len(heights) == 1:
+                return heights[0]
+
+            heights = [-1] + heights + [-1]  # 增加[-1]为了最后弹出所有元素
+            inx_list = [0]
+            max_value = 0
+
+            for inx in range(1, len(heights)):
+                value = heights[inx] # 当前值
+                if value < heights[inx_list[-1]]: # `当前值 < 栈顶值`，就弹出栈顶值，维护单调递增栈
+                    while inx_list and value < heights[inx_list[-1]]:
+                        height = heights[inx_list.pop()] # 弹出`栈顶元素`
+                        max_value = max(max_value, height * (inx - inx_list[-1] - 1)) # `栈顶元素` * `左右哨兵的索引差`
+                inx_list.append(inx)
+        return max_value
+    ```
