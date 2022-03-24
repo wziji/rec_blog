@@ -260,6 +260,33 @@
             return dp[-1][-1]
     ```
 
++ [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/)
+    + 思路：逐行处理，利用单调栈
+    + 题解：[Python3 前缀和+单调栈计算最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/solution/python3-qian-zhui-he-dan-diao-zhan-ji-su-vkpp/)
+    ```python
+    class Solution:
+        def maximalRectangle(self, matrix: List[List[str]]) -> int:
+            if not matrix:
+                return 0
+            m, n = len(matrix), len(matrix[0])
+            # 记录当前位置上方连续“1”的个数
+            pre = [0] * (n+1)
+            res = 0
+            for i in range(m):
+                for j in range(n):
+                    # 前缀和
+                    pre[j] = pre[j] + 1 if matrix[i][j] == "1" else 0
+                # 单调栈
+                stack = [-1]
+                for k, num in enumerate(pre):
+                    while stack and pre[stack[-1]] > num:
+                        index = stack.pop()
+                        res = max(res, pre[index]*(k-stack[-1]-1))
+                    stack.append(k)
+
+            return res
+    ```
+
 
 ## 2. 左右双指针
 + [15. 三数之和](https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/)

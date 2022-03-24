@@ -25,6 +25,9 @@
     + 思路：与`62`和`63`一样，先处理第一行和第一列
 + [72. 编辑距离](https://leetcode-cn.com/problems/edit-distance/)
     + 思路：与`62`和`63`和`64`一样，[先处理第一行和第一列，再处理内部数据](https://leetcode-cn.com/problems/edit-distance/solution/bian-ji-ju-chi-tu-jie-dp-zui-qing-xi-yi-abfgl/)
++ [85. 最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/)
+    + 思路：逐行处理，利用单调栈，参考 [84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
+    + 题解：[Python3 前缀和+单调栈计算最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/solution/python3-qian-zhui-he-dan-diao-zhan-ji-su-vkpp/)
 
 ## 2. 双指针
 + [15. 三数之和](https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/)
