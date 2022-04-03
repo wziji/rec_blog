@@ -557,3 +557,32 @@
                 inx_list.append(inx)
         return max_value
     ```
+
+## 7. 链表
++ [2. 两数相加](https://leetcode-cn.com/problems/add-two-numbers/)
+    + 思路：新建个链表头结点，以此在后面追加节点
+    + 题解：
+    ```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        result = ListNode(val=0)
+        tmp = result
+        s = 0
+
+        while l1 or l2 or s:
+            s += (l1.val if l1 else 0) + (l2.val if l2 else 0)
+
+            tmp.next = ListNode(val=s%10) # 重要的一点！！！
+            tmp = tmp.next
+            s = s//10
+
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+
+        return result.next
+    ```
