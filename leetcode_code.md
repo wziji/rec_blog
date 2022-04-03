@@ -586,3 +586,32 @@
 
             return result.next
     ```
+
++ [19. 删除链表的倒数第 N 个结点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
+    + 思路：快慢指针，快指针先走n步，然后快慢指针一起走
+    + 题解：
+    ```python
+    class ListNode:
+        def __init__(self, val=0, next=None):
+            self.val = val
+            self.netx = next
+
+    class Solution:
+        def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+            result = ListNode(0)
+            result.next = head
+
+            fast = slow = result
+
+            for i in range(n):
+                fast = fast.next
+
+            while fast.next:
+                fast = fast.next
+                slow = slow.next
+
+            slow.next = slow.next.next
+
+            return result.next
+
+    ```
