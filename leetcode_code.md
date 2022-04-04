@@ -577,7 +577,7 @@
             while l1 or l2 or s:
                 s += (l1.val if l1 else 0) + (l2.val if l2 else 0)
 
-                tmp.next = ListNode(val=s%10) # 重要的一点！！！
+                tmp.next = ListNode(val=s%10) # 重要的一步！！！
                 tmp = tmp.next
                 s = s//10
 
@@ -610,8 +610,93 @@
                 fast = fast.next
                 slow = slow.next
 
-            slow.next = slow.next.next
-
+            slow.next = slow.next.next # 重要的一步！！！
             return result.next
+    ```
 
++ [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+    + 思路：无
+    + 题解：
+    ```python
+    # Definition for singly-linked list.
+    # class ListNode:
+    #     def __init__(self, val=0, next=None):
+    #         self.val = val
+    #         self.next = next
+    class Solution:
+        def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+            tmp = ListNode(0)
+            result = tmp
+
+            while list1 and list2:
+                value1 = list1.val
+                value2 = list2.val
+
+                if value1 >= value2:
+                    tmp.next = ListNode(value2)
+                    list2 = list2.next
+                else:
+                    tmp.next = ListNode(value1)
+                    list1 = list1.next
+                tmp = tmp.next
+
+            if list1:
+                tmp.next = list1
+            if list2:
+                tmp.next = list2
+
+            tmp = tmp.next
+            return result.next
+    ```
+
++ [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)
+    + 思路：最小堆
+    + 题解：
+    ```python
+    class Solution:
+        def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+            if not lists:
+                return
+
+            import heapq
+            queue = []
+            for l in lists: # 将lists的值放进小根堆
+                head = l
+                while head:
+                    heapq.heappush(queue, head.val)
+                    head = head.next
+
+            dummy = ListNode(0) # 构造虚拟节点
+            cur = dummy
+            while queue: # 将堆顶取出连接成链表
+                cur.next = ListNode(heapq.heappop(queue))
+                cur = cur.next
+            return dummy.next
+    ```
+
++ [24. 两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)
+    + 思路：[迭代](https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/liang-liang-jiao-huan-lian-biao-zhong-de-jie-di-91/)
+    + 题解：
+    ```python
+    class ListNode:
+        def __init__(self, val=0, next=None):
+            self.val = val
+            self.next = next
+
+    class Solution:
+        def swapPairs(self, head: ListNode) -> ListNode:
+            if not head:
+                return
+
+            result = ListNode(0)
+            tmp = result 
+
+            while tmp.next and tmp.next.next:
+                node1 = tmp.next
+                node2 = tmp.next.next
+                tmp.next = node2
+                node1.next = node2.next
+                node2.next = node1
+                tmp = node1
+            return result.next
     ```
